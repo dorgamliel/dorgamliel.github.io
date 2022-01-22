@@ -1,6 +1,6 @@
 function getLeaderboard() {
     console.log('open: ');
-    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
+    var ws = new WebSocket("wss://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send('leaderboard');
@@ -39,7 +39,7 @@ function getUsers(usersArr) {
 
 function updateLeaderboard(username, score) {
     console.log('open: ');
-    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
+    var ws = new WebSocket("wss://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send(`updateLeaderboard,${username},${score}`);

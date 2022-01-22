@@ -1,7 +1,7 @@
 function login() {
     let user = document.getElementById('userLogin').value;
     let pass = document.getElementById('passLogin').value;
-    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
+    var ws = new WebSocket("wss://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send(`login,${user},${pass}`);
@@ -22,7 +22,7 @@ function login() {
 
 function signup() {
     let user = document.getElementById('userSignup').value;
-    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
+    var ws = new WebSocket("wss://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send(`signup,${user}`);

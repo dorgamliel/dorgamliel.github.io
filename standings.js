@@ -2,7 +2,7 @@
 
 function getStandings(){
     console.log('open: ');
-    var ws = new WebSocket("ws://127.0.0.1:8080");
+    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send('standings');

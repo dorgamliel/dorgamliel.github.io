@@ -7,7 +7,7 @@ let username = 'dor';
 
 function getBet(bet) {
     console.log('open: ');
-    var ws = new WebSocket("ws://127.0.0.1:8080");
+    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send(bet);
@@ -59,7 +59,7 @@ function sendBet(bet) {
         console.log('YOU ARE NOT LOGGED IN!')
         return;
     }
-    var ws = new WebSocket("ws://127.0.0.1:8080");
+    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     ws.send(`sendBet,${bet},${username}`);
     };
@@ -76,7 +76,7 @@ function sendBet(bet) {
 }
 
 function gamesCount() {
-    var ws = new WebSocket("ws://127.0.0.1:8080");
+    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
     console.log('Connection is open ...');
     ws.send('gamesCount');
@@ -159,7 +159,7 @@ function checkBettedTeams(gamesCount, ws) {
 }
 
 setTimeout(() => {
-    var ws = new WebSocket("ws://127.0.0.1:8080");
+    var ws = new WebSocket("ws://dry-lake-58023.herokuapp.com/");
     ws.onopen = function (event) {
         console.log('Connection is open ...');
         ws.send('gamesCount');
